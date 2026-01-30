@@ -38,7 +38,12 @@ from urllib.request import urlopen
 import json
 
 app = Flask(__name__)
+<<<<<<< HEAD
 CORS(app)
+=======
+#CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
+>>>>>>> auth0-fix
 
 # Auth0 configuration
 AUTH0_DOMAIN = "dev-qu6otuqqqbbpnzih.us.auth0.com" #The same domain used in your Front-end
@@ -173,7 +178,12 @@ def protected(payload):
 
 #this should be at the bottom of the page always
 if __name__ == "__main__":
+<<<<<<< HEAD
     app.run(debug=True)
+=======
+    # app.run(debug=True)
+    app.run(host="127.0.0.1", port=5000, debug=True)
+>>>>>>> auth0-fix
 
 
 

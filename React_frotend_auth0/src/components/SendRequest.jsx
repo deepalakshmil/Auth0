@@ -6,14 +6,23 @@ const SendRequest = () => {
 
   const fetchProtectedData = async () => {
     const token = await getAccessTokenSilently(); // 🪪 get access token from Auth0
+<<<<<<< HEAD
     console.log("token:", token);
     const response = await fetch("http://localhost:5000/protected", {
+=======
+    console.log("Token:", token);
+    const response = await fetch("http://127.0.0.1:5000/protected", {
+>>>>>>> auth0-fix
       headers: {
         Authorization: `Bearer ${token}`, // 🛡 send token to Flask
       },
     });
     const data = await response.json();
+<<<<<<< HEAD
     console.log(data);
+=======
+    console.log("RESPONSE:", data);
+>>>>>>> auth0-fix
   };
 
   return <button onClick={() => fetchProtectedData()}>SendRequest</button>;
